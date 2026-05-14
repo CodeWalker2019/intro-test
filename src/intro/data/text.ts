@@ -1,10 +1,10 @@
 export const TEXT = {
-  headline:  "LOREM",
-  subline:   "IPSUM",
-  feature:   "SIMPLY",
-  caption:   "TEXT",
-  leftWord:  "LOREM",
-  rightWord: "PRINTING",
-  emphasis:  "AND",
-  tagline:   "TYPESETTING",
+  headline:  "DEFT",
+  subline:   "MACHT",
+  feature:   "AUSGEZEICHNETES",
+  caption:   "DESIGN",
+  leftWord:  "UND",
+  rightWord: "ENTWICKELT",
+  emphasis:  "DISRUPTIVE",
+  tagline:   "KONZEPTE",
 };

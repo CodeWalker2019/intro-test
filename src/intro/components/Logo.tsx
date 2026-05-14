@@ -33,12 +33,12 @@ const LogoMesh = () => {
     >
       <MeshTransmissionMaterial
         backside
-        transmission={1}
+        transmission={0.82}
         ior={1.75}
         thickness={7.5}
-        color="#ffffff00"
-        attenuationColor="#1f1f1f"
-        attenuationDistance={0.15}
+        color="#c8c8c8"
+        attenuationColor="#3a3a3a"
+        attenuationDistance={0.25}
         roughness={0}
         anisotropy={1}
         chromaticAberration={2.5}
@@ -47,7 +47,7 @@ const LogoMesh = () => {
         temporalDistortion={0}
         clearcoat={1}
         clearcoatRoughness={0}
-        envMapIntensity={3}
+        envMapIntensity={5}
         samples={16}
         resolution={1024}
       />
@@ -58,17 +58,19 @@ const LogoMesh = () => {
 export default function Logo() {
   const groupRef = useRef<THREE.Group>(null!);
 
-  useFrame(({ camera, size }) => {
+  useFrame(({ camera, size }, delta) => {
     const cam = camera as THREE.PerspectiveCamera;
     const t = logoProxy.x;
 
-    const edgeX = (cam.position.z - Z_FAR)
-      * Math.tan(THREE.MathUtils.degToRad(cam.fov / 2))
-      * (size.width / size.height)
-      * 1.1;
+    const halfFov = Math.tan(THREE.MathUtils.degToRad(cam.fov / 2));
+    const depth = cam.position.z - Z_FAR;
+    const edgeX = depth * halfFov * (size.width / size.height) * 1.1;
+    const edgeY = depth * halfFov * 0.45;
 
     groupRef.current.position.x = t * edgeX;
+    groupRef.current.position.y = t * Math.abs(t) * edgeY;
     groupRef.current.position.z = Z_FAR + (Z_NEAR - Z_FAR) * (1 - t * t);
+    groupRef.current.rotation.y += delta * 0.9;
   });
 
   return (

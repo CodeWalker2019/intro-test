@@ -13,8 +13,10 @@ export default function Scene3D() {
       >
         <AnimatedBackground />
 
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[5, 5, 5]} intensity={4} />
+        <ambientLight intensity={0.8} />
+        <directionalLight position={[5, 5, 5]} intensity={6} />
+        <directionalLight position={[-5, 3, 2]} intensity={3} />
+        <directionalLight position={[0, -4, 4]} intensity={2} />
         <Environment preset="studio" />
 
         <Logo />
