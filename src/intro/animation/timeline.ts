@@ -61,7 +61,7 @@ export function buildTimeline(): gsap.core.Timeline {
   tl.to("#stage", { duration: 0.67, opacity: 0,      ease: "power2.in"    }, 7.80);
 
   tl.to(logoProxy, { duration: 1.5, x: 0, ease: "power2.out" }, 5.90);
-  tl.to(logoProxy, { duration: 1.5, x: 1, ease: "power2.in"  }, 8.90);
+  tl.to(logoProxy, { duration: 1.5, x: 1, ease: "power2.in"  }, 7.90);
 
   return tl;
 }
