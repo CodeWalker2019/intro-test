@@ -13,12 +13,8 @@ export default function Scene3D() {
       >
         <AnimatedBackground />
 
-        <ambientLight intensity={0.05} />
-        <directionalLight position={[5, 8, 4]} intensity={22} color="#ffffff" />
-        <directionalLight position={[-4, -3, 2]} intensity={4} color="#1133cc" />
-        <pointLight position={[0, 5, 5]} intensity={30} color="#ffffff" />
-        <pointLight position={[-5, 2, 3]} intensity={12} color="#2244bb" />
-        <Environment preset="city" />
+        <directionalLight position={[5, 8, 4]} intensity={4} color="#ffffff" />
+        <directionalLight position={[-4, -3, 2]} intensity={1} color="#1133cc" />
 
         <Logo />
       </Canvas>
